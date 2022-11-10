@@ -21,7 +21,8 @@ def check_elements(criterio,id):
 if(sys.platform.startswith('linux')):
     driver = webdriver.Firefox(executable_path='./geckodriver')
 else:
-    driver = webdriver.Firefox(executable_path='.\\chromedriver')
+  driver = webdriver.Firefox(executable_path='.\\chromedriver') 
+  #driver = webdriver.Chrome(executable_path='.\\chromedriver.exe')
 
 driver.get('https://co.linkedin.com/')
 t.sleep(3)
