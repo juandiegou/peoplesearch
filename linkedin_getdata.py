@@ -56,7 +56,7 @@ def find_persons(first_name, last_name):
 if(sys.platform.startswith('linux')):
     driver = webdriver.Firefox(executable_path='./geckodriver')
 else:
-    driver = webdriver.Firefox(executable_path='.\\chromedriver.exe')
+    driver = webdriver.Chrome(executable_path='.\\chromedriver.exe')
 
 driver.get('https://co.linkedin.com/')
 t.sleep(3)
