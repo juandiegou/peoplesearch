@@ -23,8 +23,8 @@ def check_elements(criterio,id):
 if(sys.platform.startswith('linux')):
     driver = webdriver.Firefox(executable_path='./geckodriver')
 else:
-  #driver = webdriver.Firefox(executable_path='.\\chromedriver') 
-  driver = webdriver.Chrome(executable_path='.\\chromedriver.exe')
+  driver = webdriver.Firefox(executable_path='.\\chromedriver') 
+  #driver = webdriver.Chrome(executable_path='.\\chromedriver.exe')
 
 driver.get('https://co.linkedin.com/')
 t.sleep(3)
@@ -35,4 +35,3 @@ check_element(By.NAME,"lastName").send_keys('Kumar')
 t.sleep(1)
 check_element(By.CLASS_NAME,"base-search-bar__submit-btn").click()
 
-driver.page_source
