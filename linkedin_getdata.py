@@ -12,6 +12,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import pyautogui as pg
 
+keys = ['Georgia Institute of Technology','Engineer','Intel Corporation','gatech','senic','Doctoral Student','Leadership Fellow (Coach)','nano engineering ','chemistry','chemist','engineer','bioengineering','organic engineering']
+
 def check_element(criterio,id):
 	return WebDriverWait(driver, timeout=10).until(lambda d: d.find_element(criterio,id))
 
@@ -21,15 +23,16 @@ def check_elements(criterio,id):
 if(sys.platform.startswith('linux')):
     driver = webdriver.Firefox(executable_path='./geckodriver')
 else:
-  driver = webdriver.Firefox(executable_path='.\\chromedriver') 
-  #driver = webdriver.Chrome(executable_path='.\\chromedriver.exe')
+  #driver = webdriver.Firefox(executable_path='.\\chromedriver') 
+  driver = webdriver.Chrome(executable_path='.\\chromedriver.exe')
 
 driver.get('https://co.linkedin.com/')
 t.sleep(3)
 check_element(By.XPATH,"//a[@href='https://www.linkedin.com/pub/dir/+/+?trk=guest_homepage-basic_guest_nav_menu_people']").click()
 
-check_element(By.NAME,"firstName").send_keys('Benito')
-check_element(By.NAME,"lastName").send_keys('Camelas')
+check_element(By.NAME,"firstName").send_keys('Simple')
+check_element(By.NAME,"lastName").send_keys('Kumar')
 t.sleep(1)
 check_element(By.CLASS_NAME,"base-search-bar__submit-btn").click()
 
+driver.page_source
